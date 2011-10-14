@@ -24,15 +24,13 @@ public class StepReporter extends DefaultReporter
         throws ExtensionException
     {
         String stimuli;
-        boolean status;
         int satisfaction;
 
         // Retrieve the enacted interaction.
         try
         {
             stimuli = args[0].getString();
-            status = args[1].getBooleanValue();
-            satisfaction = args[2].getIntValue();
+            satisfaction = args[1].getIntValue();
         }
         catch( LogoException e )
         {   throw new ExtensionException( e.getMessage() ) ;}

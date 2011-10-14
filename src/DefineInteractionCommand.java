@@ -22,15 +22,13 @@ public class DefineInteractionCommand extends DefaultCommand
 	{
     	String action;
     	String stimuli;
-    	Boolean status;
     	int satisfaction;
     	
         try
         {
         	action = arg0[0].getString();
         	stimuli = arg0[1].getString();
-        	status = arg0[2].getBoolean();
-        	satisfaction = arg0[3].getIntValue();
+        	satisfaction = arg0[2].getIntValue();
         }
         catch( LogoException e )
         {   throw new ExtensionException( e.getMessage() ) ;}
