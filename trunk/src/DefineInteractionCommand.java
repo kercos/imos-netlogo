@@ -7,7 +7,7 @@ public class DefineInteractionCommand extends DefaultCommand
     // take three numbers as input, report a string
     public Syntax getSyntax() 
     {
-        return Syntax.reporterSyntax(new int[] {Syntax.TYPE_STRING, Syntax.TYPE_STRING, Syntax.TYPE_BOOLEAN, Syntax.TYPE_NUMBER}, Syntax.TYPE_VOID);
+        return Syntax.reporterSyntax(new int[] {Syntax.TYPE_STRING, Syntax.TYPE_STRING, Syntax.TYPE_NUMBER}, Syntax.TYPE_VOID);
     }
     
     /**
@@ -36,7 +36,7 @@ public class DefineInteractionCommand extends DefaultCommand
         {   throw new ExtensionException( e.getMessage() ) ;}
         
         // record this interaction
-        ImosExtension.m_imos.addInteraction(action, stimuli, status, satisfaction);
+        ImosExtension.m_imos.addInteraction(action, stimuli, satisfaction);
 		
 	}
 

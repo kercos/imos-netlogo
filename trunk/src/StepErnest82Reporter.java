@@ -70,7 +70,8 @@ public class StepErnest82Reporter extends DefaultReporter
         	stimuli =  m_leftFeature + "|" + m_rightFeature;
 
         // Get the corresponding interaction and construct it if it does not yet exist. 
-    	IAct a = ImosExtension.m_imos.addInteraction(m_action, stimuli, status, m_satisfaction);
+        stimuli = (status ? "t" : "f") + stimuli;
+    	IAct a = ImosExtension.m_imos.addInteraction(m_action, stimuli, m_satisfaction);
         
     	// Get the next intention
         m_action = ImosExtension.m_imos.step(a).getSchema().getLabel();
