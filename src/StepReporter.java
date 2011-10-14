@@ -10,7 +10,7 @@ public class StepReporter extends DefaultReporter
     // take a string, a boolean, and a number as input. Returns a list.
     public Syntax getSyntax() 
     {
-        return Syntax.reporterSyntax(new int[] {Syntax.TYPE_STRING, Syntax.TYPE_BOOLEAN, Syntax.TYPE_NUMBER}, Syntax.TYPE_LIST);
+        return Syntax.reporterSyntax(new int[] {Syntax.TYPE_STRING, Syntax.TYPE_NUMBER}, Syntax.TYPE_LIST);
     }
     
     /**
@@ -38,7 +38,7 @@ public class StepReporter extends DefaultReporter
         {   throw new ExtensionException( e.getMessage() ) ;}
 
         // Get the corresponding interaction and construct it if it does not yet exist. 
-    	IAct a = ImosExtension.m_imos.addInteraction(m_action, stimuli, status, satisfaction);
+    	IAct a = ImosExtension.m_imos.addInteraction(m_action, stimuli, satisfaction);
         
     	// Get the next intention
         m_action = ImosExtension.m_imos.step(a).getSchema().getLabel();
