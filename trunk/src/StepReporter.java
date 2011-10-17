@@ -34,12 +34,13 @@ public class StepReporter extends DefaultReporter
         }
         catch( LogoException e )
         {   throw new ExtensionException( e.getMessage() ) ;}
-
+        
         // Get the corresponding interaction and construct it if it does not yet exist. 
-    	IAct a = ImosExtension.m_imos.addInteraction(m_action, stimuli, satisfaction);
+        IImos imos = ImosExtension.m_imoss.get(context.getAgent());
+    	IAct a = imos.addInteraction(m_action, stimuli, satisfaction);
         
     	// Get the next intention
-        m_action = ImosExtension.m_imos.step(a).getSchema().getLabel();
+        m_action = imos.step(a).getSchema().getLabel();
         
         LogoList list = new LogoList();   
         

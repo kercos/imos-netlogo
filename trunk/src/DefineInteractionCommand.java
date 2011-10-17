@@ -1,13 +1,15 @@
 
+import imos.IImos;
+
 import org.nlogo.api.*;
 
 public class DefineInteractionCommand extends DefaultCommand
 {
 	
-    // take three numbers as input, report a string
+    // take two strings and a numbers as input.
     public Syntax getSyntax() 
     {
-        return Syntax.reporterSyntax(new int[] {Syntax.TYPE_STRING, Syntax.TYPE_STRING, Syntax.TYPE_NUMBER}, Syntax.TYPE_VOID);
+        return Syntax.commandSyntax(new int[] {Syntax.TYPE_STRING, Syntax.TYPE_STRING, Syntax.TYPE_NUMBER});
     }
     
     /**
@@ -17,7 +19,7 @@ public class DefineInteractionCommand extends DefaultCommand
      * @param args[2] The status (boolean).
      * @param args[3] The satisfaction (int).
      */
-	public void perform(Argument[] arg0, Context arg1)
+	public void perform(Argument[] arg0, Context context)
 			throws ExtensionException, LogoException 
 	{
     	String action;
@@ -34,8 +36,9 @@ public class DefineInteractionCommand extends DefaultCommand
         {   throw new ExtensionException( e.getMessage() ) ;}
         
         // record this interaction
-        ImosExtension.m_imos.addInteraction(action, stimuli, satisfaction);
-		
+        IImos imos = ImosExtension.m_imoss.get(context.getAgent());
+        imos.addInteraction(action, stimuli, satisfaction);
+        
 	}
 
 }
