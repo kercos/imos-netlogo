@@ -16,8 +16,7 @@ public class StepReporter extends DefaultReporter
     /**
      * Record the actually enacted interaction and return the intended action 
      * @param args[0] The stimuli.
-     * @param args[1] The enaction strue=succeed, false=fail.
-     * @param args[2] The satisfaction.
+     * @param args[1] The satisfaction.
      * @return The intended action (and the enacted interaction for debug).
      */
     public Object report(Argument args[], Context context)
