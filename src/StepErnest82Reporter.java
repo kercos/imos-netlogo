@@ -30,7 +30,7 @@ public class StepErnest82Reporter extends DefaultReporter
     }
     
     /**
-     * Record the actually enacted interaction and return the intended action 
+     * Record the actually enacted interaction and return the intended action.
      * @param args[0] The enaction status true=succeed, false=fail.
      * @param args[1] The distance to target on left eye.
      * @param args[2] The distance to target on right eye.

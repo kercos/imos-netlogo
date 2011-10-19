@@ -3,7 +3,9 @@ import imos.IImos;
 
 import org.nlogo.api.*;
 
-public class DefineInteractionCommand extends DefaultCommand
+import ernest.IErnest;
+
+public class DefineInteractionErnestCommand extends DefaultCommand
 {
 	
     // take two strings and a numbers as input.
@@ -35,8 +37,8 @@ public class DefineInteractionCommand extends DefaultCommand
         {   throw new ExtensionException( e.getMessage() ) ;}
         
         // record this interaction
-        IImos imos = ImosExtension.m_imoss.get(context.getAgent());
-        imos.addInteraction(action, stimuli, satisfaction);
+        IErnest ernest = ImosExtension.m_ernests.get(context.getAgent());
+        ernest.addInteraction(action, stimuli, satisfaction);
         
 	}
 
